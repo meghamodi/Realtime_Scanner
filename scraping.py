@@ -11,7 +11,7 @@ connection = mysql.connect(host="localhost",
                      passwd="Modi123@",
                      db="inventory")
 driver = webdriver.Chrome('/usr/local/bin/chromedriver')
-
+# Scraping barcode scanner
 driver.get("https://www.barcodelookup.com/")
 driver.implicitly_wait(4)
 table= driver.find_element_by_xpath("//*[@id='body-container']/section[1]/div/div[1]/p")
