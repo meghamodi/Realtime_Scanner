@@ -44,17 +44,5 @@ def main():
 
 
 if __name__ == '__main__':
-    # barcode_text = "sdfd"
     barcode_text = main()
-    # print("here",barcode_text)
-    # name = 'Bai Antioxidant Infusion'
-    # mySql_insert_query = "INSERT INTO pantry (item_barcode,item_name) VALUES (%s, %s)"
-    # values = (barcode_text, name)
-    # mySql_insert_query = "INSERT INTO pantry (item_barcode,item_name) VALUES ({}, {});".format(barcode_text, name)
-    cursor = connection.cursor()
-    print(mySql_insert_query)
-    ## executing the query with values
-    cursor.execute(mySql_insert_query, values)
-    connection.commit()
-
     print(cursor.rowcount, "record inserted")

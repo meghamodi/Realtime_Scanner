@@ -25,12 +25,14 @@ driver.get("https://www.barcodelookup.com/{}".format(product_id))
 product_details = driver.find_element_by_xpath("//*[@id='body-container']/section[2]/div/div/div[2]/h4")
 product = product_details.text
 
+driver.quit()
 mySql_insert_query = "INSERT INTO pantry (item_barcode,item_name) VALUES (%s, %s)"
 values = (product_id, product)
-# mySql_insert_query = "INSERT INTO pantry (item_barcode,item_name) VALUES ({}, {});".format(barcode_text, name)
+
 cursor = connection.cursor()
 print(mySql_insert_query)
-## executing the query with values
+
+# executing the query with values
 cursor.execute(mySql_insert_query, values)
 connection.commit()
 
