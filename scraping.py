@@ -6,12 +6,14 @@ import mysql.connector as mysql
 import csv
 from app import main
 
+# Connectivity to the database
 connection = mysql.connect(host="localhost",
                      user="root",
-                     passwd="Modi123@",
+                     passwd=" ",
                      db="inventory")
 driver = webdriver.Chrome('/usr/local/bin/chromedriver')
-# Scraping barcode scanner
+
+# Scraping barcode scanner from the website, automating it using selenium
 driver.get("https://www.barcodelookup.com/")
 driver.implicitly_wait(4)
 table= driver.find_element_by_xpath("//*[@id='body-container']/section[1]/div/div[1]/p")
